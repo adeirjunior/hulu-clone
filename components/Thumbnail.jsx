@@ -4,12 +4,13 @@ import { forwardRef } from 'react';
 
 // eslint-disable-next-line react/display-name
 const Thumbnail = forwardRef(({ result }, ref) => {
+    const title = result.original_title || result.title;
 
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
     <div ref={ref} className="group mx-3 cursor-pointer transition duration-200 ease-in  mb-10 transform sm:hover:scale-105 hover:z-50">
         <Image 
-        alt ='adl'
+        alt ={title}
         layout='responsive'
         height={1080}
         width={1920}
@@ -22,7 +23,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
         <div className='p-2'>
             <p className='truncate max-w-md'>{result.overview}</p>
             <h2 className='text-2xl text-white mt-1 transition-all duration-120 ease-in-out group-hover:font-bold'>
-            {result.original_title || result.title}
+            {title}
             </h2>
             <p className='flex select-none items-center opacity-0 group-hover:opacity-100'>
                 {result.media_type && `${result.media_type}`}{" "}
