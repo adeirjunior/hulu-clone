@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Footer from '../components/Footer.jsx';
-import Header from '../components/header.jsx';
+import Header from '../components/Header.jsx';
 import Nav from '../components/Nav.jsx';
 import Results from '../components/Results.jsx';
 import requests from '../utils/requests.js';
