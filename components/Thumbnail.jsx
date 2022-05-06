@@ -4,7 +4,8 @@ import { forwardRef } from 'react';
 
 // eslint-disable-next-line react/display-name
 const Thumbnail = forwardRef(({ result }, ref) => {
-    const title = result.original_title || result.title;
+    const title = result.title || result.name;
+    console.log(result);
 
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
